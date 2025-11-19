@@ -1,12 +1,61 @@
 {
-  "name": "mcp-server",
+  "name": "business-affairs-mcp-server",
   "version": "1.0.0",
+  "description": "Comprehensive Business Affairs Workflow Assistant - MCP Server with data integration, contract analysis, budget tracking, and intelligent automation",
   "type": "module",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "latest"
+  "main": "server.js",
+  "bin": {
+    "business-affairs-mcp": "./server.js"
   },
   "scripts": {
-    "start": "node server.js"
-  }
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node --watch server.js",
+    "build": "echo 'No build step required for pure Node.js project'",
+    "test": "node --test",
+    "lint": "eslint .",
+    "format": "prettier --write '**/*.{js,json,md}'",
+    "validate": "node -e \"import('./config/settings.js').then(m => m.validateConfig())\"",
+    "inspect": "node --inspect server.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "business-affairs",
+    "contract-management",
+    "legal-tech",
+    "workflow-automation",
+    "budget-tracking",
+    "deal-analysis",
+    "risk-assessment",
+    "claude",
+    "ai-assistant"
+  ],
+  "author": "Business Affairs Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  },
+  "optionalDependencies": {
+    "googleapis": "^128.0.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "express": "^4.18.2",
+    "dotenv": "^16.4.1",
+    "csv-parser": "^3.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/business-affairs-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/business-affairs-mcp/issues"
+  },
+  "homepage": "https://github.com/your-org/business-affairs-mcp#readme"
 }
-
